@@ -1,0 +1,32 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Book Appointment — Dalot Beauty Spa</title>
+<meta name="description" content="Book your appointment at Dalot Beauty Spa. Quick, easy, instant WhatsApp confirmation.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head><body>
+<div id="site-header"></div>
+<section class="page-hero"><div class="container"><h1>Book Your Appointment</h1><p>Fill in details — we will confirm via WhatsApp instantly</p></div></section>
+<section class="section"><div class="container">
+  <form class="form" id="booking-form">
+    <div class="form-group"><label>Full Name *</label><input name="name" required placeholder="Your name"></div>
+    <div class="form-group"><label>Phone (WhatsApp) *</label><input name="phone" required placeholder="+1 ..."></div>
+    <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="you@email.com"></div>
+    <div class="form-group"><label>Service *</label><select name="service" id="service-select" required><option value="">Loading…</option></select></div>
+    <div class="form-group"><label>Date *</label><input type="date" name="date" required></div>
+    <div class="form-group"><label>Time *</label><input type="time" name="time" required></div>
+    <div class="form-group"><label>Notes</label><textarea name="notes" rows="3" placeholder="Anything we should know?"></textarea></div>
+    <button type="submit" class="btn btn-primary">Confirm via WhatsApp</button>
+  </form>
+</div></section>
+<div id="site-footer"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/js/supabase-config.js"></script>
+<script src="/js/script.js"></script>
+<script>
+mountChrome('');loadServiceOptions('service-select');
+document.getElementById('booking-form').addEventListener('submit',e=>{e.preventDefault();submitBooking(e.target)});
+document.querySelector('input[name=date]').min=new Date().toISOString().split('T')[0];
+</script>
+</body></html>

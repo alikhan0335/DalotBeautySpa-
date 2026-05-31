@@ -1,0 +1,17 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gallery — Dalot Beauty Spa</title>
+<meta name="description" content="See real transformations and signature looks from Dalot Beauty Spa.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head><body>
+<div id="site-header"></div>
+<section class="page-hero"><div class="container"><h1>Gallery</h1><p>A glimpse of transformations from our studio</p></div></section>
+<section class="section"><div class="container"><div id="gallery-grid" class="gallery-grid"><p class="loading">Loading…</p></div></div></section>
+<div id="site-footer"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/js/supabase-config.js"></script>
+<script src="/js/script.js"></script>
+<script>mountChrome('gallery');loadGallery('gallery-grid')</script>
+</body></html>

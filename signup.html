@@ -1,0 +1,37 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sign Up — Dalot Beauty Spa</title>
+<meta name="description" content="Create your Dalot Beauty Spa account to book faster, save your details, and enjoy a seamless salon experience.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head><body>
+<div class="auth-shell">
+  <div class="auth-card">
+    <h1>Join Dalot</h1>
+    <p class="sub">Create your account to book faster.</p>
+    <form id="signup-form">
+      <div class="form-group"><label>Full Name</label><input type="text" name="name" required></div>
+      <div class="form-group"><label>Email</label><input type="email" name="email" required></div>
+      <div class="form-group"><label>Password</label><input type="password" name="password" required minlength="6"></div>
+      <button class="btn btn-primary" type="submit" style="width:100%;justify-content:center">Create Account</button>
+    </form>
+    <p class="switch">Already a member? <a href="/pages/login.html">Sign in</a></p>
+    <p class="switch" style="margin-top:8px"><a href="/pages/home.html" style="color:var(--muted)">← Back to website</a></p>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/js/supabase-config.js"></script>
+<script src="/js/auth.js"></script>
+<script>
+document.getElementById('signup-form').addEventListener('submit',async e=>{
+  e.preventDefault();
+  const f=e.target;
+  try{
+    await doSignUp(f.email.value,f.password.value,f.name.value);
+    alert('Account created! Please check your email to verify, then sign in.');
+    window.location.href='/pages/login.html';
+  }catch(err){alert(err.message||'Sign up failed')}
+});
+</script>
+</body></html>

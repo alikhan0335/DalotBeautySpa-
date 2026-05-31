@@ -1,0 +1,36 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sign In — Dalot Beauty Spa</title>
+<meta name="description" content="Securely sign in to your Dalot Beauty Spa account to manage bookings and access your salon experience.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head><body>
+<div class="auth-shell">
+  <div class="auth-card">
+    <h1>Welcome back ✨</h1>
+    <p class="sub">Sign in to your Dalot account</p>
+    <form id="login-form">
+      <div class="form-group"><label>Email</label><input type="email" name="email" required></div>
+      <div class="form-group"><label>Password</label><input type="password" name="password" required minlength="6"></div>
+      <button class="btn btn-primary" type="submit" style="width:100%;justify-content:center">Sign In</button>
+    </form>
+    <p class="switch">New here? <a href="/pages/signup.html">Create an account</a></p>
+    <p class="switch" style="margin-top:8px"><a href="/pages/home.html" style="color:var(--muted)">← Back to website</a></p>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/js/supabase-config.js"></script>
+<script src="/js/auth.js"></script>
+<script>
+document.getElementById('login-form').addEventListener('submit',async e=>{
+  e.preventDefault();
+  const f=e.target;
+  try{
+    const user=await doSignIn(f.email.value,f.password.value);
+    const admin=await isAdmin(user.id);
+    window.location.href = admin ? '/admin/index.html' : '/pages/home.html';
+  }catch(err){alert(err.message||'Login failed')}
+});
+</script>
+</body></html>

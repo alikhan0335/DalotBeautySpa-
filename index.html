@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dalot Beauty Spa — Refresh Your Beauty, Reveal Your Radiance</title>
+<meta name="description" content="Dalot Beauty Spa — premium hair, skin, nails & bridal services in the USA. Book your transformation today.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div id="site-header"></div>
+
+<section class="hero">
+  <div class="hero-content">
+    <p class="tagline">✦ Welcome to Dalot Beauty Spa ✦</p>
+    <h1>Refresh Your Beauty,<br><span class="accent">Reveal Your Radiance</span></h1>
+    <p class="lead">Indulge in premium hair, skin, nail & bridal experiences crafted by passionate beauty artists. Your transformation begins here.</p>
+    <div class="hero-cta">
+      <a href="/pages/booking.html" class="btn btn-primary">Book Appointment →</a>
+      <a href="/pages/services.html" class="btn btn-ghost">Explore Services</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="n">10+</div><div class="l">Years of artistry</div></div>
+      <div><div class="n">5k+</div><div class="l">Happy clients</div></div>
+      <div><div class="n">★ 4.9</div><div class="l">Average rating</div></div>
+    </div>
+    <div class="hero-auth-bar" aria-label="Account actions">
+      <a href="/pages/login.html" class="btn btn-outline">🔐 Sign In</a>
+      <span class="or">or</span>
+      <a href="/pages/signup.html" class="btn btn-primary">✨ Sign Up</a>
+      <span class="hint">Join Dalot to book faster, save your details, and manage appointments easily.</span>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <span class="eyebrow">What we do</span>
+      <h2>A Curated Beauty Experience</h2>
+      <p>Every treatment is designed around you — your hair, your skin, your story.</p>
+    </div>
+    <div class="grid grid-4">
+      <div class="icon-card"><div class="ico">✂</div><h3>Hair Studio</h3><p>Cuts, colors, balayage & treatments by certified stylists.</p></div>
+      <div class="icon-card"><div class="ico">✨</div><h3>Skin & Facials</h3><p>Glow-boosting facials tailored to your skin type.</p></div>
+      <div class="icon-card"><div class="ico">💅</div><h3>Nails</h3><p>Manicures, pedicures, gel art & luxury extensions.</p></div>
+      <div class="icon-card"><div class="ico">👰</div><h3>Bridal</h3><p>Full bridal packages so you shine on your big day.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:#fff">
+  <div class="container">
+    <div class="section-title">
+      <span class="eyebrow">Signature treatments</span>
+      <h2>Our Most-Loved Services</h2>
+      <p>Hand-picked treatments to refresh your natural glow.</p>
+    </div>
+    <div id="services-list" class="grid grid-3"><p class="loading">Loading…</p></div>
+    <div style="text-align:center;margin-top:50px"><a href="/pages/services.html" class="btn btn-outline">View All Services →</a></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container about-strip">
+    <div class="about-visual"><div class="mono">"Beauty is the way<br>you make others feel<br>about themselves."</div></div>
+    <div class="body">
+      <span class="eyebrow">About Dalot</span>
+      <h2>A Sanctuary for Beauty</h2>
+      <p>At Dalot Beauty Spa, we believe true beauty is born from confidence and self-care. Our team of certified artists brings years of experience and a passion for personalized luxury to every visit.</p>
+      <p>From your first consultation to the final reveal, every moment is crafted with intention — gentle hands, premium products, and a calm space designed for you.</p>
+      <a href="/pages/about.html" class="btn btn-primary">Our Story →</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:#fff">
+  <div class="container">
+    <div class="section-title"><span class="eyebrow">Recent work</span><h2>From Our Gallery</h2><p>A glimpse of our recent transformations.</p></div>
+    <div id="gallery-preview" class="gallery-grid"></div>
+    <div style="text-align:center;margin-top:40px"><a href="/pages/gallery.html" class="btn btn-outline">View Full Gallery →</a></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title"><span class="eyebrow">Beauty journal</span><h2>From Our Blog</h2><p>Beauty tips, skincare advice & salon stories.</p></div>
+    <div id="blog-preview" class="grid grid-3"></div>
+    <div style="text-align:center;margin-top:40px"><a href="/pages/blog.html" class="btn btn-outline">Read All Posts →</a></div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--gradient-soft);text-align:center">
+  <div class="container" style="max-width:680px">
+    <span class="eyebrow" style="color:var(--rose-deep);font-size:.8rem;letter-spacing:4px;text-transform:uppercase;font-weight:600">Ready to glow?</span>
+    <h2 style="margin:18px 0">Book your appointment today</h2>
+    <p style="color:var(--muted);margin-bottom:32px">Reserve your seat at Dalot — same-day appointments often available.</p>
+    <a href="/pages/booking.html" class="btn btn-primary">Book Now →</a>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/js/supabase-config.js"></script>
+<script src="/js/script.js"></script>
+<script>
+mountChrome('home');
+loadServices('services-list',6);
+loadGallery('gallery-preview',8);
+loadBlogs('blog-preview',3);
+</script>
+</body></html>
